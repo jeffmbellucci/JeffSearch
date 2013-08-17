@@ -1,0 +1,7 @@
+<% if logged_in? %>
+	<%=link_to 'my searches', searches_url %> -
+	<%= link_to 'home', root_url%> -
+	<%=link_to 'logout', sessions_url, method: 'delete'%> 
+<% else %>
+	<%=link_to 'login', new_sessions_url%>
+<% end %>

@@ -1,0 +1,25 @@
+<h3>Edit Search</h3>
+<br>
+<% @search.errors.full_messages.each do |error| %>
+<font color="red"><%= error %></font>
+<br>
+<% end  %>
+<br>
+<br>
+<%= form_for(@search) do |f| %>
+<%= f.text_field :title%>
+<%= f.label :title, 'Name your search'%>
+<br>
+<%= f.text_field :address %>
+<%= f.label :address, 'Enter starting Address'%>
+<br>
+<%= f.text_field :subject %>
+<%= f.label :subject, 'What are you looking for?'%>
+<br>
+<%= f.text_field :radius %>
+<%= f.label :radius, 'Enter distance (meters)'%>
+<%= f.hidden_field :user_id, value: current_user.id %>
+<br>
+<%= f.submit "Update Search"%>
+<% end %>
+<br>

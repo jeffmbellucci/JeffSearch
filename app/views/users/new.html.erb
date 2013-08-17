@@ -1,0 +1,17 @@
+<h3>Sign Up for Jeff Search</h3>
+<br>
+<% @user.errors.full_messages.each do |error| %>
+<%= error %>
+<% end  %>
+<br>
+<%= form_for(@user) do |f| %>
+<%= f.text_field :username %>
+<%= f.label :username %>
+<br>
+<%= f.password_field :password %>
+<%= f.label :password %>
+<br>
+<%=f.submit 'Make Me'%>
+<% end %>
+<br>
+<br>

@@ -1,0 +1,13 @@
+
+<h3> Login to JeffSearch </h3>
+<br>
+<%=form_for(:session, url: sessions_url) do |f| %>
+<%= f.text_field :username %>
+<%= f.label :username%>
+<br>
+<%=f.password_field :password%>
+<%=f.label :password%>
+<br>
+<%= f.submit "Engage"%>
+<% end %>
+<br>

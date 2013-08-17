@@ -1,0 +1,25 @@
+
+<br>
+<h3>Search title: <%= @search.title %></h3>
+<font color="orange"> Looking for: <%= @search.subject %></font><br>
+<% business_names = Search.find_nearby_places_by_name(@search.address, 
+													  @search.subject, 
+	 												  @search.radius) %>
+<% business_lat_longs = Search.find_nearby_places_lat_long(@search.address, 															@search.subject,						  	 									 @search.radius) %>
+<% business_names.each_with_index do |name, i| %>
+	<% destination = business_lat_longs[i]%>
+	<font color="gray"><%= name %></font><br>
+	<% directions = Search.route(@search.address, destination) %>
+	<% directions["routes"][0]["legs"][0]["steps"].each do |step| %>  
+	<font color= "Blue">
+		<%= Nokogiri::HTML(step["html_instructions"]).text %>
+	</font>
+	<br>
+	<% end %>
+	<br>
+	<br>
+<% end %>
+<br>
+<%=link_to("Edit Search", edit_search_url(@search)) %>
+<br>
+

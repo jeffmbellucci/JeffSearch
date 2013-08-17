@@ -1,0 +1,11 @@
+<h3> <%=current_user.username%>'s Searches </h3>
+<ul>
+<% @searches.each do |search| %>
+<li><%=link_to search.title, search_url(search) %>, Starting address: 
+	<%= search.address%> Looking for: <%=search.subject%></li>
+	<%= button_to('Delete Search', search_url(search), method: :delete) %>
+	<br>
+<% end %>
+</ul>
+<%= link_to "new search", new_search_url%>
+<br>

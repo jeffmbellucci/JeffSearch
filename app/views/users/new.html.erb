@@ -1,7 +1,9 @@
 <h3>Sign Up for Jeff Search</h3>
 <br>
 <% @user.errors.full_messages.each do |error| %>
-<%= error %>
+<font color="red"><%= error %></font>
+<br>
+
 <% end  %>
 <br>
 <%= form_for(@user) do |f| %>

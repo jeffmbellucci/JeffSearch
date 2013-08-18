@@ -1,9 +1,14 @@
 <h3> <%=current_user.username%>'s Searches </h3>
 <ul>
 <% @searches.each do |search| %>
-<li><%=link_to search.title, search_url(search) %>, Starting address: 
-	<%= search.address%> Looking for: <%=search.subject%></li>
-	<%= button_to('Delete Search', search_url(search), method: :delete) %>
+<li><%=link_to search.title, search_url(search) %>, 
+	<b> Start address: </b> <%= search.address%>
+	<b> Keyword:</b> <%=search.subject%>
+	<b> Distance:</b> <%="#{search.radius / 1000.0} km"%></li>
+	
+	<%= link_to('Delete Search', search_url(search), method: :delete) %>
+	<%= link_to('Edit Search', edit_search_url(search)) %>
+	<br>
 	<br>
 <% end %>
 </ul>

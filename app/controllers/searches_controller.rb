@@ -1,4 +1,6 @@
 class SearchesController < ApplicationController
+  include SearchesHelper
+  
   before_filter :logged_in_user
   def new
       @search = Search.new

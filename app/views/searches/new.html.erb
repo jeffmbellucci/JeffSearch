@@ -5,7 +5,6 @@
 <br>
 <% end  %>
 <br>
-<br>
 <%= form_for(@search) do |f| %>
 <%= f.text_field :title%>
 <%= f.label :title, 'Name your search'%>
@@ -17,7 +16,7 @@
 <%= f.label :subject, 'What are you looking for?'%>
 <br>
 <%= f.text_field :radius %>
-<%= f.label :radius, 'Enter distance (meters)'%>
+<%= f.label :radius, 'Enter radius (meters)'%>
 <%= f.hidden_field :user_id, value: current_user.id %>
 <br>
 <%= f.submit "Create Search"%>

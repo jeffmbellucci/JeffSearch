@@ -6,6 +6,7 @@
 <% end  %>
 <br>
 <%= form_for(@search) do |f| %>
+<%= f.error_messages %>
 <%= f.text_field :title%>
 <%= f.label :title, 'Name your search'%>
 <br>

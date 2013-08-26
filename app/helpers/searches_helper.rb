@@ -1,3 +1,5 @@
+require 'addressable/uri'
+
 module SearchesHelper
   API_KEY = "AIzaSyB53uQVbh2_6dNpi6XTtsLb2pCeK31gFEc"
   
